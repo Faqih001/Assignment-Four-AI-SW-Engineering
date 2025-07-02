@@ -1,0 +1,149 @@
+{
+  "summary": {
+    "total_tests": 10,
+    "passed": 10,
+    "failed": 0,
+    "success_rate": 100.0,
+    "avg_execution_time": 0.5888196945190429,
+    "avg_ai_confidence": 0.91952980507564
+  },
+  "security_analysis": {
+    "high": 2,
+    "medium": 1,
+    "low": 7
+  },
+  "detailed_results": [
+    {
+      "test_name": "Valid Login",
+      "username": "admin",
+      "password": "password123",
+      "expected_result": "success",
+      "actual_result": "PASSED",
+      "execution_time": 0.5846097469329834,
+      "timestamp": "2025-07-03T00:30:08.789491",
+      "error_details": null,
+      "ai_confidence": 0.968186992040592,
+      "security_risk": "low"
+    },
+    {
+      "test_name": "Invalid Username",
+      "username": "wronguser",
+      "password": "password123",
+      "expected_result": "failure",
+      "actual_result": "PASSED",
+      "execution_time": 0.7396295070648193,
+      "timestamp": "2025-07-03T00:30:09.374187",
+      "error_details": null,
+      "ai_confidence": 0.8697732767127487,
+      "security_risk": "low"
+    },
+    {
+      "test_name": "Invalid Password",
+      "username": "admin",
+      "password": "wrongpass",
+      "expected_result": "failure",
+      "actual_result": "PASSED",
+      "execution_time": 0.5216426849365234,
+      "timestamp": "2025-07-03T00:30:10.113900",
+      "error_details": null,
+      "ai_confidence": 0.8811638467300674,
+      "security_risk": "low"
+    },
+    {
+      "test_name": "Empty Username",
+      "username": "",
+      "password": "password123",
+      "expected_result": "failure",
+      "actual_result": "PASSED",
+      "execution_time": 0.6024706363677979,
+      "timestamp": "2025-07-03T00:30:10.635638",
+      "error_details": null,
+      "ai_confidence": 0.8600380025541285,
+      "security_risk": "low"
+    },
+    {
+      "test_name": "Empty Password",
+      "username": "admin",
+      "password": "",
+      "expected_result": "failure",
+      "actual_result": "PASSED",
+      "execution_time": 0.441556453704834,
+      "timestamp": "2025-07-03T00:30:11.238198",
+      "error_details": null,
+      "ai_confidence": 0.8706011105378856,
+      "security_risk": "low"
+    },
+    {
+      "test_name": "Both Empty",
+      "username": "",
+      "password": "",
+      "expected_result": "failure",
+      "actual_result": "PASSED",
+      "execution_time": 0.6956787109375,
+      "timestamp": "2025-07-03T00:30:11.679888",
+      "error_details": null,
+      "ai_confidence": 0.9126751611273605,
+      "security_risk": "low"
+    },
+    {
+      "test_name": "SQL Injection Attempt",
+      "username": "admin'; DROP TABLE users; --",
+      "password": "password",
+      "expected_result": "failure",
+      "actual_result": "PASSED",
+      "execution_time": 0.606316089630127,
+      "timestamp": "2025-07-03T00:30:12.375839",
+      "error_details": null,
+      "ai_confidence": 0.9660849970026177,
+      "security_risk": "high"
+    },
+    {
+      "test_name": "XSS Attempt",
+      "username": "<script>alert('xss')</script>",
+      "password": "password",
+      "expected_result": "failure",
+      "actual_result": "PASSED",
+      "execution_time": 0.7473769187927246,
+      "timestamp": "2025-07-03T00:30:12.982812",
+      "error_details": null,
+      "ai_confidence": 0.9719290914460061,
+      "security_risk": "high"
+    },
+    {
+      "test_name": "Special Characters",
+      "username": "user@domain.com",
+      "password": "p@ssw0rd!",
+      "expected_result": "failure",
+      "actual_result": "PASSED",
+      "execution_time": 0.44780969619750977,
+      "timestamp": "2025-07-03T00:30:13.730317",
+      "error_details": null,
+      "ai_confidence": 0.9688998446711261,
+      "security_risk": "low"
+    },
+    {
+      "test_name": "Long Input",
+      "username": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "password": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "expected_result": "failure",
+      "actual_result": "PASSED",
+      "execution_time": 0.5011065006256104,
+      "timestamp": "2025-07-03T00:30:14.178201",
+      "error_details": null,
+      "ai_confidence": 0.9259457279338656,
+      "security_risk": "medium"
+    }
+  ],
+  "ai_insights": {
+    "coverage_analysis": "Tests cover authentication, input validation, and security scenarios",
+    "risk_assessment": "High risk scenarios: 2, Medium: 1, Low: 7",
+    "ai_performance": "Average confidence: 91.95%",
+    "recommendations": [
+      "Implement rate limiting for login attempts",
+      "Add CAPTCHA for suspicious activity",
+      "Strengthen input validation against injection attacks",
+      "Monitor for unusual login patterns",
+      "Consider implementing multi-factor authentication"
+    ]
+  }
+}
