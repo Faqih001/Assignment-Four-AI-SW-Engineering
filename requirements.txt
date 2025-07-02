@@ -1,0 +1,29 @@
+# AI Software Engineering Assignment - Requirements
+
+## Python Packages Required
+
+# For Task 1: Code Completion
+# Built-in libraries (time, random, typing) - no additional packages needed
+
+# For Task 2: Automated Testing
+selenium==4.15.0
+webdriver-manager==4.0.1
+pytest==7.4.3
+pytest-html==4.1.1
+
+# For Task 3: Predictive Analytics (and general data science)
+pandas==2.1.3
+numpy==1.24.3
+matplotlib==3.7.2
+seaborn==0.12.2
+scikit-learn==1.3.2
+jupyter==1.0.0
+ipykernel==6.25.2
+
+# Additional utilities
+datetime  # Built-in
+json      # Built-in
+warnings  # Built-in
+
+## Installation Command
+# pip install pandas numpy matplotlib seaborn scikit-learn selenium jupyter pytest webdriver-manager
